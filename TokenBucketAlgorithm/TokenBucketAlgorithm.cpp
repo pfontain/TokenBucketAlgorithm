@@ -44,8 +44,8 @@ public:
         {
             std::lock_guard lock(counter_mutex_);
             exit_ = true;
-            condition_variable_.notify_one();
         }
+        condition_variable_.notify_one();
         refiller_.join();
     }
 
